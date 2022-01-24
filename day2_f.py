@@ -6,15 +6,17 @@ with open(inp,'r') as file:
 
 forward = 0
 down = 0
+aim = 0
 
 for m in moves:
     direction, dist = m.split(' ')
     dist = int(dist)
     if direction == 'forward':
         forward += dist
+        down += aim*dist
     elif direction ==  'down':
-        down += dist
+        aim += dist
     elif direction == 'up':
-        down -= dist
+        aim -= dist
 
 print(f'forward: {forward}\ndown: {down}\nposition is :{forward*down}')
