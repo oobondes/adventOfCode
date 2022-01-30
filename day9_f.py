@@ -17,12 +17,23 @@ for i in range(len(lines)):
     lines[i] = [int(x) for x in list(lines[i])]
 
 def findBasin(x,y):
-    print(x,y)
-    if y > height-1 or x > length-1:
-        return 0
-    elif lines[y][x] == 9:
-        return 0
-    return 1 + findBasin(x+1,y+1) + findBasin(x+1,y-1) + findBasin(x+1,y) + findBasin(x-1,y+1) + findBasin(x-1,y-1) + findBasin(x-1,y) + findBasin(x,y-1) + findBasin(x,y+1)
+    chkd = list()
+    def helper(pnt):
+        x1,y1 = pnt    
+        
+        if y1 >= height or x1 >= length or x1 < 0 or y1 < 0:
+            return 0
+        
+        if f'{pnt[0]}-{pnt[1]}' in chkd: 
+            return 0
+        
+        if lines[y1][x1] == 9:
+            return 0
+        
+        chkd.append(f'{pnt[0]}-{pnt[1]}')
+        return 1  + helper([x1-1,y1]) + helper([x1,y1-1]) + helper([x1,y1+1]) + helper([x1+1,y1])
+    ans = helper([x,y])
+    return ans
 
 
 #check corners
@@ -62,6 +73,6 @@ for x in range(1,length-1):
             lowpoints.append(lines[y][x])
             pts.append([y,x])
 
-print(*lowpoints, sep=', ')
-ans = sum([findBasin(x[1],x[0]) for x in pts])
-print(f'ans: {ans}')
+ans = [findBasin(x[1],x[0]) for x in pts]
+ans.sort()
+print(f'ans: {ans[-1]*ans[-2]*ans[-3]}')
