@@ -27,15 +27,10 @@ for i, b in enumerate(brackets):
     for c in b:
         if isOpen(c):
             que.append(c)
-            print(*que)
         if isClose(c):
-            #print(f'{c}  --',que)
             if match[que[-1]] == c:
-                #print('match')
                 que.pop()
             else:
-                #print('not match')
-                #print(i, b)
                 ans += points[c]
                 break
 

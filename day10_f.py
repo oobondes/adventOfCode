@@ -34,7 +34,6 @@ for i, b in enumerate(brackets):
                 que = list()
                 break
     que = que[::-1]
-    print(*que)
     if que:
         a = 0
         for c in que:
@@ -42,5 +41,4 @@ for i, b in enumerate(brackets):
         ans.append(a)
 
 ans.sort()
-print(ans)
 print(ans[len(ans)//2])
