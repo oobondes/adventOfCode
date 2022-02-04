@@ -1,6 +1,10 @@
+#this script solves the problem here ----> https://adventofcode.com/2021/day/5
+import sys
+
+inp = sys.argv[1]
 lineSegments = list()
 xmax, ymax = 0,0
-with open('day5.txt','r') as file:
+with open(inp,'r') as file:
     for line in file:
         if line == '\n':break
         coordinates = line.split('->')

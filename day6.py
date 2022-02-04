@@ -1,3 +1,4 @@
+#this script solves the problem here ----> https://adventofcode.com/2021/day/6
 import sys
 
 infile = sys.argv[1]

@@ -1,3 +1,4 @@
+#this script solves the problem here ----> https://adventofcode.com/2021/day/11
 import sys
 
 def contains9(l):
