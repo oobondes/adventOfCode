@@ -25,8 +25,8 @@ with open(inp,'r') as file:
 board = list()    
 for t in lines:
 	if t=='\n':
- 		board.append([])
- 		continue
+		board.append([])
+		continue
 	board[-1].append([int(x) for x in t.split(' ') if x != ''])
 
 

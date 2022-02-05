@@ -19,9 +19,7 @@ length = len(lines[0])
 flashCount = 0
 
 for cycle in range(cycles):
-    print(f'cycle {cycle} starting ---------------------')
     lines = [[x+1 for x in l] for l in lines]
-    print(f'cycle {cycle} checking flash')
 
     while contains9(lines):
         for x in range(length):
@@ -30,7 +28,6 @@ for cycle in range(cycles):
                 if 100 > lines[y][x] > 9:
                     lines[y][x] = 100
                     flashCount += 1
-                    print(flashCount)
                     try:
                         lines[y+1][x] += 1
                     except:pass
@@ -61,9 +58,6 @@ for cycle in range(cycles):
                             lines[y][x-1] += 1
                     except:pass
     lines = [[x if x<100 else 0 for x in l] for l in lines]
-    print(f'cycle {cycle} finished =================================================')
-    print(*lines, sep='\n')
     
 
-print(*lines, sep='\n')
 print('ans: ',flashCount)
