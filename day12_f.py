@@ -1,5 +1,4 @@
 #this script solves the problem here ----> https://adventofcode.com/2021/day/12
-import graphlib
 import sys
 
 #graph class to store all connections from one point to another.
