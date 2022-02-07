@@ -48,6 +48,7 @@ paper = [[False for i in range(xmax)] for j in range(ymax)]
 for x,y in points:
     paper[y][x] = True
 
+
 for dir, line in fold:
     if dir == 'y':
         for y in range(line):
@@ -61,10 +62,11 @@ for dir, line in fold:
                 try:
                     paper[y][x] = paper[y][x] or paper[y][2*line-x]
                 except IndexError:
+                    
                     print(f'x:{x},y:{y},line:{line},test:{2*line-x}')
                     exit()
         paper = [row[:line] for row in paper]
         xmax = line
     ans = sum([sum([1 for i in row if i == True]) for row in paper])
-    break
-print(f'ans: {ans}')
+    
+printlist(paper)
