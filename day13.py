@@ -1,4 +1,4 @@
-#this script solves the problem here ----> https://adventofcode.com/2021/day/11
+#this script solves the problem here ----> https://adventofcode.com/2021/day/13
 import sys
 
 def printlist(l):

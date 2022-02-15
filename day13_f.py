@@ -1,8 +1,8 @@
-#this script solves the problem here ----> https://adventofcode.com/2021/day/11
+#this script solves the problem here ----> https://adventofcode.com/2021/day/13
 import sys
 
 def printlist(l):
-    print('===============================================')
+    print('='*len(l[0]))
     for row in l:
         for item in row:
             if item:
@@ -10,7 +10,7 @@ def printlist(l):
             else:
                 print('.',end='')
         print('')
-    print('===============================================')
+    print('='*len(l[0]))
 
 inp = sys.argv[1]
 points = list()
